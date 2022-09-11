@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { Seo } from './Seo';
 
+import { header, content } from '../styles/layout.module.css';
+import '../styles/global.css';
+
 const Layout = ({
   children,
   title = false,
@@ -25,13 +28,13 @@ const Layout = ({
   return (
     <>
       <Seo />
-      <header>
+      <header className={header}>
         <Link to="/">{meta.title}</Link>
         <nav>
           <Link to="/about">About</Link>
         </nav>
       </header>
-      <main>{children}</main>
+      <main className={content}>{children}</main>
     </>
   );
 };
